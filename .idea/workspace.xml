@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d1a34b-ecf4-4a9b-9a28-f29aac07c230" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D-Aufträge/D1Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/M-Aufträge/M1Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Q-Aufträge/Q1Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V-Aufträge/V1Readme.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/D1/Heizung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Heizung.executor": "Run",
     "Application.JavaProject.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -88,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731332489988</updated>
-      <workItem from="1731332491037" duration="3758000" />
+      <workItem from="1731332491037" duration="6318000" />
     </task>
     <servers />
   </component>
