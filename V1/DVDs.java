@@ -1,12 +1,20 @@
 package V1;
 
-import java.math.BigDecimal;
+public class DVDs extends Medien{
 
-public class DVDs {
+    private int Filmlaenge;
 
-    private String Titel;
-    private Integer Jahr;
-    private BigDecimal Preis;
-    private Integer Filmlaenge;
+    public DVDs(String Title, int Jahr, double Preis, int Filmlaenge) {
+        super(Title, Jahr, Preis);
+        this.Filmlaenge = Filmlaenge;
+    }
+
+    public int getFilmlaenge() {
+        return Filmlaenge;
+    }
+    public void setFilmlaenge(int Filmlaenge) {
+        this.Filmlaenge = Filmlaenge;
+    }
+
 
 }

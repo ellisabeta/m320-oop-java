@@ -1,13 +1,20 @@
 package V1;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
+public class Buecher extends Medien{
 
-public class Buecher {
+    private int ISBN;
 
-    private String Titel;
-    private Integer Jahr;
-    private BigDecimal Preis;
-    private Integer ISBN;
+    public Buecher(String Title, int Jahr, double Preis, int ISBN ) {
+        super(Title, Jahr, Preis);
+        this.ISBN = ISBN;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
+    }
 
 }

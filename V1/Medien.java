@@ -1,0 +1,30 @@
+package V1;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
+public class Medien {
+
+    private String Titel;
+    private int Jahr;
+    private double Preis;
+
+    public Medien() {}
+
+    public Medien(String titel, int jahr, double preis) {
+        Titel = titel;
+        Jahr = jahr;
+        Preis = preis;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Medien");
+
+        ArrayList<Medien> medienList = new ArrayList<Medien>();
+        medienList.add(new DVDs("dvd1", 2010, 1.50, 90));
+        medienList.add(new CDs("cd1", 2000, 2.00, "My cool bandname hehe"));
+        medienList.add(new Buecher("buch1", 2020, 3.00, 1010101010));
+
+        System.out.println(medienList);
+    }
+}
