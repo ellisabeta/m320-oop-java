@@ -1,6 +1,5 @@
 package V1;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Medien {
@@ -12,7 +11,7 @@ public class Medien {
     public Medien() {}
 
     public Medien(String titel, int jahr, double preis) {
-        Titel = titel;
+        Titel = titel; //small letters here
         Jahr = jahr;
         Preis = preis;
     }
