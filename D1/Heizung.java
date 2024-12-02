@@ -58,14 +58,6 @@ public class Heizung {
         }
     }
 
-    public void decreaseTemperature() {
-        if (temperature - increment >= min) {
-            temperature -= increment;
-        } else {
-            System.out.println("Can't decrease temperature..");
-        }
-    }
-
     public static void main(String[] args) {
         System.out.println("Heizung");
 
@@ -76,9 +68,6 @@ public class Heizung {
 
         heizung.increaseTemperature();
         System.out.println("Increased temperature: " + heizung.getTemperature());
-
-        heizung.decreaseTemperature();
-        System.out.println("Decreased temperature: " + heizung.getTemperature());
     }
 
 }
