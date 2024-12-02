@@ -33,5 +33,11 @@ public class Medien {
         for (Medien medien : medienList) {
             System.out.println(medien);
         }
+
+        medienList.remove(2);
+        System.out.println("After removing the book out of the List: ");
+        for (Medien medien : medienList) {
+            System.out.println (medien);
+        }
     }
 }
