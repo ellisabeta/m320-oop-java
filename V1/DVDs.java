@@ -1,4 +1,12 @@
 package V1;
 
-public class Preis {
+import java.math.BigDecimal;
+
+public class DVDs {
+
+    private String Titel;
+    private Integer Jahr;
+    private BigDecimal Preis;
+    private Integer Filmlaenge;
+
 }
