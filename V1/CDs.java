@@ -16,4 +16,9 @@ public class CDs extends Medien{
     public void setBandname(String Bandname) {
         this.Bandname = Bandname;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "CDs " + "Bandname=" + Bandname ;
+    }
 }

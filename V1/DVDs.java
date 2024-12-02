@@ -16,5 +16,8 @@ public class DVDs extends Medien{
         this.Filmlaenge = Filmlaenge;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() + "Filmlaenge: " + Filmlaenge;
+    }
 }

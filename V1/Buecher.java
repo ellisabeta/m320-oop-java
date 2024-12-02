@@ -17,4 +17,8 @@ public class Buecher extends Medien{
         this.ISBN = ISBN;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "ISBN: " + ISBN;
+    }
 }
