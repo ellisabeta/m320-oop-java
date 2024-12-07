@@ -4,11 +4,16 @@ public class Passagier {
 
     private String name;
 
-    public void printName() {
-
+    public Passagier(String name) {
+        this.name = name;
     }
 
-    public static void main(String[] args) {
+    @Override
+    public String toString() {
+        return name;
+    }
 
+    public void printName() {
+        System.out.println(name);
     }
 }
