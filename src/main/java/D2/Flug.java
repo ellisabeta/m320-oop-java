@@ -12,8 +12,10 @@ public class Flug {
         passengers.add(new Passagier(name));
     }
 
-    public void removePassenger() {
-        passengers.remove(passengers.size()-1);
+    public void removePassenger(int index) {
+        if (index >= 0 && index < passengers.size()) {
+            passengers.remove(index);
+        }
     }
 
     public String printPassengerList() {
@@ -35,7 +37,9 @@ public class Flug {
 
             String response = scanner.nextLine();
             if (response.equals("0")) {
-                flight.removePassenger();
+                System.out.println("Please enter the index of the passenger to be removed: ");
+                int index = Integer.parseInt(scanner.nextLine());
+                flight.removePassenger(index);
             } else {
                 System.out.println("Please enter a passenger:");
                 flight.addPassenger(scanner.nextLine());
