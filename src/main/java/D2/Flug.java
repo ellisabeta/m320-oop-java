@@ -18,8 +18,10 @@ public class Flug {
         }
     }
 
-    public String printPassengerList() {
-        return passengers.toString();
+    public void printPassengerList() {
+        for (Passagier p : passengers) {
+            p.printName();
+        }
     }
 
     public static void main(String[] args) {
@@ -30,7 +32,8 @@ public class Flug {
         String name = scanner.nextLine();
 
         flight.addPassenger(name);
-        System.out.println("Passengers on the flight: " + flight.printPassengerList());
+        System.out.println("Passengers list: ");
+        flight.printPassengerList();
 
         while (true) {
             System.out.println("Would you like to add (press 1) or remove (press 0) a passenger?");
@@ -45,7 +48,8 @@ public class Flug {
                 flight.addPassenger(scanner.nextLine());
             }
 
-            System.out.println("Passengers on the flight: " + flight.printPassengerList());
+            System.out.println("Passengers list: ");
+            flight.printPassengerList();
         }
     }
 }
