@@ -13,7 +13,7 @@ public class Flug {
     }
 
     public void removePassenger() {
-
+        passengers.remove(passengers.size()-1);
     }
 
     public String printPassengerList() {
@@ -32,6 +32,19 @@ public class Flug {
         String name = scanner.nextLine();
 
         flight.addPassenger(name);
+        System.out.println("Passengers on the flight: " + flight.printPassengerList());
+
+        System.out.println("Would you like to add (press 1) or remove (press 0) a passenger?");
+
+        Scanner scanner2 = new Scanner(System.in);
+        String response = scanner2.nextLine();
+        if (response.equals("0")) {
+            flight.removePassenger();
+        } else {
+            System.out.println("Please enter a passenger:");
+            flight.addPassenger(scanner.nextLine());
+        }
+
         System.out.println("Passengers on the flight: " + flight.printPassengerList());
     }
 }
