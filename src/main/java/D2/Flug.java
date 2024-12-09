@@ -12,16 +12,14 @@ public class Flug {
         passengers.add(new Passagier(name));
     }
 
-    public void removePassenger(int index) {
+    public void removePassengerBy(int index) {
         if (index >= 0 && index < passengers.size()) {
             passengers.remove(index);
         }
     }
 
     public void printPassengerList() {
-        for (Passagier p : passengers) {
-            p.printName();
-        }
+        passengers.stream().forEach(p -> p.printName());
     }
 
     public static void main(String[] args) {
@@ -42,7 +40,7 @@ public class Flug {
             if (response.equals("0")) {
                 System.out.println("Please enter the index of the passenger to be removed: ");
                 int index = Integer.parseInt(scanner.nextLine());
-                flight.removePassenger(index);
+                flight.removePassengerBy(index);
             } else {
                 System.out.println("Please enter a passenger:");
                 flight.addPassenger(scanner.nextLine());
