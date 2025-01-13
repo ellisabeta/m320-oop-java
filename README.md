@@ -11,5 +11,5 @@ Backend of the project is in <u>"/src/main/java/project.songs.artists.manager".<
 The frontend of the project is located in <u>"/src/main/project-frontend-songs-artists-manager".</u>
 
 - To start the **backend** do ``run``
-- To start the **frontend** do ``yarn run dev``
+- To start the **frontend** do ``yarn dev``
 
