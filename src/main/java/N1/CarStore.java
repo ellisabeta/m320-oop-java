@@ -1,3 +1,5 @@
+package N1;
+
 import java.util.Scanner;
 
 public class CarStore {
