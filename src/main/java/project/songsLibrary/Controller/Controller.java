@@ -1,4 +1,4 @@
-package project.songs.artists.manager.Controller;
+package project.songsLibrary.Controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

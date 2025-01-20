@@ -1,4 +1,4 @@
-package project.songs.artists.manager.Entity;
+package project.songsLibrary.Entity;
 
 public class Artists {
     private String name;
