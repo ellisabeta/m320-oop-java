@@ -1,4 +1,4 @@
-package V1;
+package Kompetenzen.V1;
 
 import java.util.ArrayList;
 

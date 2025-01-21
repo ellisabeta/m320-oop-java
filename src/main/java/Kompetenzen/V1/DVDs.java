@@ -1,4 +1,4 @@
-package V1;
+package Kompetenzen.V1;
 
 public class DVDs extends Medien{
 

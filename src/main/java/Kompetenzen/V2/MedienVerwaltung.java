@@ -1,6 +1,11 @@
-package V2;
+package Kompetenzen.V2;
 
-import V1.*;
+import Kompetenzen.D1.V1.*;
+import Kompetenzen.V1.Buecher;
+import Kompetenzen.V1.CDs;
+import Kompetenzen.V1.DVDs;
+import Kompetenzen.V1.Medien;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

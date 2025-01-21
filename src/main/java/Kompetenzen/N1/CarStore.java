@@ -1,4 +1,4 @@
-package N1;
+package Kompetenzen.N1;
 
 import java.util.Scanner;
 

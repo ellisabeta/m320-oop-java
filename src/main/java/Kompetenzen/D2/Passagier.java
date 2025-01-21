@@ -1,4 +1,4 @@
-package D2;
+package Kompetenzen.D2;
 
 public class Passagier {
 

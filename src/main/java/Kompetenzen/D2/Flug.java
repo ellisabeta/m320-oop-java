@@ -1,4 +1,4 @@
-package D2;
+package Kompetenzen.D2;
 
 import java.util.ArrayList;
 import java.util.List;

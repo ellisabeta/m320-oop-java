@@ -1,4 +1,4 @@
-package D1;
+package Kompetenzen.D1;
 
 public class Heizung {
 
