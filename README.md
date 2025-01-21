@@ -10,7 +10,9 @@
 Backend of the project is in <u>"/src/main/java/project.songsLibrary".</u>  
 The frontend of the project is located in <u>"/src/main/project-frontend-songsLibrary".</u>
 
-- To start the **backend** do `run`
+- To start the **backend** do  
+`mvn clean`  
+`mvn spring-boot:run`
 - To start the **frontend** do `yarn dev`
 
 To create Database container:  
