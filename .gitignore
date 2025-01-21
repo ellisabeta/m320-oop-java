@@ -1,3 +1,5 @@
 
 /.idea
-/.target/*
+/target/*
+/.vite
+/src/main/project-frontend-songsLibrary/.vite
