@@ -1,6 +1,5 @@
 package Kompetenzen.V2;
 
-import Kompetenzen.D1.V1.*;
 import Kompetenzen.V1.Buecher;
 import Kompetenzen.V1.CDs;
 import Kompetenzen.V1.DVDs;
