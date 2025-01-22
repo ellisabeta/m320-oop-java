@@ -3,18 +3,22 @@ package project.songsLibrary.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import project.songsLibrary.Entity.Songs;
+import project.songsLibrary.Repository.Repository;
 
-@RestController
+@RestController("/api")
 public class Controller {
 
-    @GetMapping()
+    private Repository repository;
+
+    @GetMapping("/songs")
     public String getSongs() {
         return "Hello World";
     }
 
-    @PostMapping()
-    public String createSongs() {
-        return "Hello World";
+    @PostMapping("/songs")
+    public void createSongs(Songs songs) {
+        this.repository.save(songs);
     }
 
     @GetMapping()
