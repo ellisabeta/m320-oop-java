@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 public class Songs {
 
     @Id
-    public int id;
+    private int id;
 
     @Column
     public String songsName;
