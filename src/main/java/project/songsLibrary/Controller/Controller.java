@@ -1,24 +1,25 @@
 package project.songsLibrary.Controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import project.songsLibrary.Entity.Songs;
 import project.songsLibrary.Repository.Repository;
 
 @RestController("/api")
 public class Controller {
 
+    @Autowired
     private Repository repository;
 
     @GetMapping("/songs")
-    public String getSongs() {
-        return "Hello World";
+    public Iterable<Songs> getSongs() {
+        return this.repository.findAll();
     }
 
     @PostMapping("/songs")
-    public void createSongs(Songs songs) {
-        this.repository.save(songs);
+    public Songs createSongs(@RequestBody Songs songs) {
+        songs.id= null;
+        return this.repository.save(songs);
     }
 
     @GetMapping()
