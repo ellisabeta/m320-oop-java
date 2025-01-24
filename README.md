@@ -2,7 +2,7 @@
 
 ## Kompetenzen
 
-- They are all located in <u>"src/main/java"</u>  
+- They are all located in <u>src/main/java/Kompetenzen</u>  
 
   
 ## Project
