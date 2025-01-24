@@ -14,6 +14,11 @@ public class Services {
     private SongsRepository songsRepository;
     private ArtistsRepository artistsRepository;
 
+    public Services(SongsRepository songsRepository, ArtistsRepository artistsRepository) {
+        this.songsRepository = songsRepository;
+        this.artistsRepository = artistsRepository;
+    }
+
     public List<Songs> getAllSongs() {
         return songsRepository.findAll();
     }
