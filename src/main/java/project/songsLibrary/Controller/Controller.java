@@ -2,28 +2,36 @@ package project.songsLibrary.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import project.songsLibrary.Entity.Artists;
 import project.songsLibrary.Entity.Songs;
-import project.songsLibrary.Repository.Repository;
+import project.songsLibrary.Service.Services;
 
-@RestController("/api")
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
 public class Controller {
 
     @Autowired
-    private Repository repository;
+    private Services service;
 
     @GetMapping("/songs")
-    public Iterable<Songs> getSongs() {
-        return this.repository.findAll();
+    public List<Songs> getSongs() {
+        return this.service.getAllSongs();
     }
 
     @PostMapping("/songs")
     public Songs createSongs(@RequestBody Songs songs) {
-        songs.id= null;
-        return this.repository.save(songs);
+        return this.service.saveSongs(songs);
     }
 
-    @GetMapping()
-    public String getArtists() {
-        return "Hello World";
+    @GetMapping("/artists")
+    public List<Artists> getArtists() {
+        return service.getAllArtists();
+    }
+
+    @PostMapping("/artists")
+    public Artists createArtists(@RequestBody Artists artists) {
+        return service.saveArtists(artists);
     }
 }
