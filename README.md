@@ -12,6 +12,9 @@ My Project is a songs library. Then main functions are that the user can add son
 The main idea is that the song that is being added and an artist get assigned to each other immediately.
 There should be a function for showing statistics of the listened song's duration.
 
+### Initial ClassDiagram
+![M320-Project-ClassDiagramm-initial.drawio.png](src/main/java/project/songsLibrary/Diagramms/M320-Project-ClassDiagramm-initial.drawio.png)
+
 ### Set up
 Backend of the project is in <u>/src/main/java/project.songsLibrary</u>  
 The frontend of the project is located in <u>/src/main/project-frontend-songsLibrary</u>  
