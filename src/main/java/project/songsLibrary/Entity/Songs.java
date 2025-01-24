@@ -11,4 +11,8 @@ public class Songs {
 
     @Column
     public String songsName;
+
+    @Column
+    public int songsDuration;
+
 }

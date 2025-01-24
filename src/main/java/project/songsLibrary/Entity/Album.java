@@ -1,11 +1,19 @@
 package project.songsLibrary.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Album {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column
+    private String albumName;
+
+    @ManyToOne
+    @JoinColumn(name = "songs_id")
+    private Songs songs;
+
 }

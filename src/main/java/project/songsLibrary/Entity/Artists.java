@@ -1,8 +1,6 @@
 package project.songsLibrary.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Artists {
@@ -15,4 +13,8 @@ public class Artists {
 
     @Column
     private Integer followers;
+
+    @ManyToOne
+    @JoinColumn(name = "songs_id")
+    private Songs songs;
 }
