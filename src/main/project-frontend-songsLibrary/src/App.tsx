@@ -1,26 +1,54 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    interface Song {
+        id: number;
+        songsName: string;
+    }
+
+    const [songs, setSongs] = useState<Song[]>([]);
+    const [songName, setSongName] = useState('');
+
+    const fetchSongs = async () => {
+        try {
+            const response = await fetch('/api/songs', {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data: Song[] = await response.json();
+            setSongs(data);
+        } catch (error) {
+            console.error('Error fetching songs:', error);
+        }
+    };
+
+    return (
+        <>
+            <h1>Song Library</h1>
+            <div>
+                <button onClick={fetchSongs}>Get Songs</button>
+                <br/>
+                <input
+                    type="text"
+                    value={songName}
+                    onChange={(e) => setSongName(e.target.value)}
+                    placeholder="Enter song name"
+                />
+            </div>
+            <h2>Songs List:</h2>
+            <ul>
+                {songs.map((song) => (
+                    <li key={song.id}>{song.songsName}</li>
+                ))}
+            </ul>
+        </>
+    );
 }
 
-export default App
+export default App;
