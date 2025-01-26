@@ -7,12 +7,35 @@ public class Songs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
+    private Integer id;
 
     @Column
-    public String songsName;
+    private String songsName;
 
     @Column
-    public int songsDuration;
+    private int songsDuration;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getSongsName() {
+        return songsName;
+    }
+
+    public void setSongsName(String songsName) {
+        this.songsName = songsName;
+    }
+
+    public int getSongsDuration() {
+        return songsDuration;
+    }
+
+    public void setSongsDuration(int songsDuration) {
+        this.songsDuration = songsDuration;
+    }
 }

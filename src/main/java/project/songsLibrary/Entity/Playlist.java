@@ -1,6 +1,7 @@
 package project.songsLibrary.Entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Playlist {
@@ -12,14 +13,35 @@ public class Playlist {
     @Column
     private String playlistName;
 
-    @Column
-    private String playlistDuration;
+    @ManyToMany
+    @JoinTable(
+            name = "playlist_songs",
+            joinColumns = @JoinColumn(name = "playlist_id"),
+            inverseJoinColumns = @JoinColumn(name = "song_id")
+    )
+    private List<Songs> songs;
 
-    @ManyToOne
-    @JoinColumn(name = "songs_id")
-    private Songs songs;
+    public Integer getId() {
+        return id;
+    }
 
-    public void addSong(Songs songs) {
-        return;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getPlaylistName() {
+        return playlistName;
+    }
+
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
+    }
+
+    public List<Songs> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Songs> songs) {
+        this.songs = songs;
     }
 }
