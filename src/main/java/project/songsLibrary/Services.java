@@ -1,4 +1,4 @@
-package project.songsLibrary.Service;
+package project.songsLibrary;
 
 import project.songsLibrary.Entity.Album;
 import project.songsLibrary.Entity.Artists;
@@ -70,14 +70,14 @@ public class Services {
     }
 
     // creating a playlist only with songs
-    public Playlist createPlaylist(Playlist playlistRequest) {
-        List<Songs> songs = playlistRequest.getSongs().stream()
+    public Playlist createPlaylist(Playlist playlist) {
+        List<Songs> songs = playlist.getSongs().stream()
                 .map(song -> songsRepository.findById(song.getId())
                         .orElseThrow(() -> new RuntimeException("Song not found: " + song.getId())))
                 .collect(Collectors.toList());
 
-        playlistRequest.setSongs(songs);
-        return playlistRepository.save(playlistRequest);
+        playlist.setSongs(songs);
+        return playlistRepository.save(playlist);
     }
 
 }
