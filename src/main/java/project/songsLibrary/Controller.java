@@ -1,6 +1,8 @@
 package project.songsLibrary;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.songsLibrary.Entity.Artists;
 import project.songsLibrary.Entity.Album;
@@ -50,13 +52,13 @@ public class Controller {
 
     // Albums api requests
     @PostMapping("/albums")
-    public Album createAlbum(@RequestBody Album albumRequest) {
+    public Album createAlbum(@RequestBody Album albumRequest) throws MyException {
         return service.createAlbum(albumRequest);
     }
 
     // Playlists api requests
     @PostMapping("/playlists")
-    public Playlist createPlaylist(@RequestBody Playlist playlistRequest) {
+    public Playlist createPlaylist(@RequestBody Playlist playlistRequest) throws MyException {
         return service.createPlaylist(playlistRequest);
     }
 }
