@@ -19,6 +19,15 @@ There might be a function for showing statistics of the listened song's duration
 ### Initial ClassDiagram
 ![M320-Project-ClassDiagramm-initial.drawio.png](src/main/java/project/songsLibrary/Diagramms/M320-Project-ClassDiagramm-initial.drawio.png)
 
+### End Class Diagram
+
+### Sequence Diagram
+
+### Design Pattern
+My application is based on a builder design pattern in java. It is based on that entities are being created with their properties and relationships.  
+All entities are constructed and created on their own and no implementation is really done much, except when implementing the interfaces or exceptions.
+As an example: creating entities like Songs, Artists, Playlist, Album and their relations make it a builder design pattern.
+
 ### Set up
 **Backend** of the project is in <u>/src/main/java/project.songsLibrary</u>  
 The frontend of the project is located in <u>/src/main/project-frontend-songsLibrary</u>  
@@ -33,8 +42,3 @@ To create Database container:
 ```shell
 docker run --name projectM320 -e POSTGRES_PASSWORD=songs -e POSTGRES_USER=library -p 5432:5432 -d postgres:16
 ```
-
-### Design Pattern:  
-My application is based on a builder design pattern in java. It is based on that entities are being created with their properties and relationships.  
-All entities are constructed and created on their own and no implementation is really done much, except when implementing the interfaces or exceptions.
-As an example: creating entities like Songs, Artists, Playlist, Album and their relations make it a builder design pattern.
