@@ -1,9 +1,6 @@
 package project.songsLibrary;
 
-import project.songsLibrary.Entity.Album;
-import project.songsLibrary.Entity.Artists;
-import project.songsLibrary.Entity.Playlist;
-import project.songsLibrary.Entity.Songs;
+import project.songsLibrary.Entity.*;
 import project.songsLibrary.Repository.AlbumRepository;
 import project.songsLibrary.Repository.ArtistsRepository;
 import project.songsLibrary.Repository.PlaylistRepository;
@@ -108,5 +105,13 @@ public class Services {
         } else {
             throw new MyException("Song not found in playlist");
         }
+    }
+
+    public List<Statistics> getStatisticsForSongs() {
+        List<Songs> songs = songsRepository.findAll();
+
+        return songs.stream()
+                .map(song -> new Statistics(song.getSongsName(), song.getSongsDuration()))
+                .collect(Collectors.toList());
     }
 }

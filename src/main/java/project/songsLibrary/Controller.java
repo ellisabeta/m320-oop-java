@@ -2,10 +2,7 @@ package project.songsLibrary;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import project.songsLibrary.Entity.Artists;
-import project.songsLibrary.Entity.Album;
-import project.songsLibrary.Entity.Playlist;
-import project.songsLibrary.Entity.Songs;
+import project.songsLibrary.Entity.*;
 
 import java.util.List;
 
@@ -63,5 +60,10 @@ public class Controller {
     @DeleteMapping("/playlists/{playlistId}/songs/{songId}")
     public void removeSongFromPlaylist(@PathVariable Integer playlistId, @PathVariable Integer songId) throws MyException {
         service.removeSongFromPlaylist(playlistId, songId);
+    }
+
+    @GetMapping("/statistiks")
+    public List<Statistics> getStatistics() {
+        return service.getStatisticsForSongs();
     }
 }
