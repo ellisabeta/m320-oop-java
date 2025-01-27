@@ -20,6 +20,7 @@ There might be a function for showing statistics of the listened song's duration
 ![M320-Project-ClassDiagramm-initial.drawio.png](src/main/java/project/songsLibrary/Diagramms/M320-Project-ClassDiagramm-initial.drawio.png)
 
 ### End Class Diagram
+![m320-project-endClassDiagramOfResult.jpg](src/main/java/project/songsLibrary/Diagramms/m320-project-endClassDiagramOfResult.jpg)
 
 ### Sequence Diagram
 
