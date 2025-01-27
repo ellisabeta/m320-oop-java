@@ -1,9 +1,11 @@
 package project.songsLibrary.Entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class Statistics {
 
     @Id
@@ -17,6 +19,8 @@ public class Statistics {
         this.songName = songName;
         this.duration = duration;
     }
+
+    public Statistics() {}
 
     public String getSongName() {
         return songName;
