@@ -11,6 +11,7 @@ import project.songsLibrary.Repository.SongsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -93,4 +94,19 @@ public class Services {
             return playlistRepository.save(playlist);
     }
 
+    public void removeSongFromPlaylist(Integer playlistId, Integer songId) throws MyException {
+        Playlist playlist = playlistRepository.findById(playlistId)
+                .orElseThrow(() -> new MyException("No such playlist"));
+
+        Optional<Songs> songToRemove = playlist.getSongs().stream()
+                .filter(song -> song.getId().equals(songId))
+                .findFirst();
+
+        if (songToRemove.isPresent()) {
+            playlist.getSongs().remove(songToRemove.get());
+            playlistRepository.save(playlist);
+        } else {
+            throw new MyException("Song not found in playlist");
+        }
+    }
 }
