@@ -55,29 +55,42 @@ public class Services {
     }
 
     // creating album with songs and artists in it
-    public Album createAlbum(Album album) {
-        Artists artist = artistsRepository.findById(album.getArtist().getId())
-                .orElseThrow(() -> new RuntimeException("Artist not found"));
+    public Album createAlbum(Album album) throws MyException {
+            Artists artist = artistsRepository.findById(album.getArtist().getId())
+                    .orElseThrow(() -> new MyException("Artist not found"));
 
-        List<Songs> songs = album.getSongs().stream()
-                .map(song -> songsRepository.findById(song.getId())
-                        .orElseThrow(() -> new RuntimeException("Song not found: " + song.getId())))
-                .collect(Collectors.toList());
-        album.setArtist(artist);
-        album.setSongs(songs);
+            List<Songs> songs = album.getSongs().stream()
+                    .map(song -> {
+                        try {
+                            return songsRepository.findById(song.getId())
+                                    .orElseThrow(() -> new MyException("Song not found: " + song.getId()));
+                        } catch (MyException exception) {
+                            throw new RuntimeException(exception);
+                        }
+                    })
+                    .collect(Collectors.toList());
+            album.setArtist(artist);
+            album.setSongs(songs);
 
         return albumRepository.save(album);
     }
 
     // creating a playlist only with songs
-    public Playlist createPlaylist(Playlist playlist) {
-        List<Songs> songs = playlist.getSongs().stream()
-                .map(song -> songsRepository.findById(song.getId())
-                        .orElseThrow(() -> new RuntimeException("Song not found: " + song.getId())))
-                .collect(Collectors.toList());
+    public Playlist createPlaylist(Playlist playlist) throws MyException {
 
-        playlist.setSongs(songs);
-        return playlistRepository.save(playlist);
+            List<Songs> songs = playlist.getSongs().stream()
+                    .map(song -> {
+                        try {
+                            return songsRepository.findById(song.getId())
+                                    .orElseThrow(() -> new MyException("Song not found: " + song.getId()));
+                        } catch (MyException exception) {
+                            throw new RuntimeException(exception);
+                        }
+                    })
+                    .collect(Collectors.toList());
+
+            playlist.setSongs(songs);
+            return playlistRepository.save(playlist);
     }
 
 }
