@@ -2,7 +2,6 @@ package project.songsLibrary.Entity;
 
 import jakarta.persistence.*;
 
-import javax.net.ssl.SSLSession;
 import java.util.List;
 
 @Entity
