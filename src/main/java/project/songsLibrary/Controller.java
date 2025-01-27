@@ -1,8 +1,6 @@
 package project.songsLibrary;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.songsLibrary.Entity.Artists;
 import project.songsLibrary.Entity.Album;
@@ -60,5 +58,10 @@ public class Controller {
     @PostMapping("/playlists")
     public Playlist createPlaylist(@RequestBody Playlist playlistRequest) throws MyException {
         return service.createPlaylist(playlistRequest);
+    }
+
+    @DeleteMapping("/playlists/{playlistId}/songs/{songId}")
+    public void removeSongFromPlaylist(@PathVariable Integer playlistId, @PathVariable Integer songId) throws MyException {
+        service.removeSongFromPlaylist(playlistId, songId);
     }
 }
